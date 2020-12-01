@@ -1,0 +1,59 @@
+main{
+    border: 2px solid blue;
+    width: fit-content;
+}
+
+#grupoFormulario > div{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+#grupoFormulario:last-child{
+    margin-right: 1em;
+}
+
+.bloqueNoches{
+    flex-basis: 25%;
+}
+
+.bloqueDatos{
+    border: 2px solid red;
+    width: fit-content;
+}
+
+.bloqueHabitacionInterna{
+    width:150px;
+}
+
+.bloqueAgregar{
+    background-color: lightblue;
+    width: 100px;
+}
+
+.botonAgregar {
+    height: 2em;
+    line-height: 2em;  
+    width: 2em;  
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(92, 92, 180);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+hr{ 
+    border:         none;
+    border-left:    2px solid hsla(200, 10%, 50%, 100);
+    height:         auto;
+    width:          5px;       
+}
+
+#bloqueHabitacion{
+    display: none;
+}
+
+.close{
+    visibility: hidden;
+}

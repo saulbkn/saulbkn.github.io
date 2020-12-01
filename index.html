@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <main class="mx-auto mt-5">
+        <nav>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active bg-warning" id="hoteles-tab" data-toggle="tab" href="#hoteles" role="tab" aria-controls="hoteles" aria-selected="true">Hoteles</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="vuelos-tab" data-toggle="tab" href="#vuelos" role="tab" aria-controls="vuelos" aria-selected="false">Vuelos y Hoteles</a>
+                </li>
+              </ul>
+
+              <div class="tab-content bg-warning" id="contenidoBuscador">
+                <div class="tab-pane fade show active" id="hoteles" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="d-flex" id="grupoFormulario">
+                        <div class="form-group pt-2 bg-white d-flex flex-column justify-content-end">
+                            <h6 class="pl-2" for="destino">Destino</h6>
+                            <input type="text" class="form-control" id="textoDestino" placeholder="Destino o hotel?">
+                        </div>
+                        <div class="form-group pt-2 bg-white d-flex flex-column justify-content-end">
+                            <h6 class="pl-2" for="destino">Fecha de entrada</h6>
+                            <input type="date" id="datepicker" class="form-control">
+                        </div>
+                        
+                        
+                        <div class="form-group bloqueNoches bg-white d-flex flex-column justify-content-end">
+                            <h6 class="pl-2" for="numeroNoches">Noches</h6>
+                            <div>
+                                <select class="form-control" id="numeroNoches"></select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group bloqueNoches bg-white d-flex flex-column justify-content-end">
+                            <h6 class="pl-2" for="numeroNoches">Habitaciones</h6>
+                            <button type="button" class="btn bg-white" data-toggle="popover">
+                                Resumen
+                            </button>
+                        </div>
+
+                        <div class="form-group bg-white">
+                            <input type="button" value="Buscar">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="vuelos" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>En proceso</p>
+                </div>
+              </div>
+        </nav>
+    </main>
+
+    <div class="bloqueDatos d-flex flex-row" id="bloqueDatos">
+        <div class="d-flex flex-column">
+            <div class="m-2 bloqueAgregar d-flex flex-column">
+                <div class="botonAgregar mx-auto mt-3">+</div>
+                <p class="text-center">Agregar habitación</p>
+            </div>
+            <div class="text-center mr-2 align-middle">HECHO</div>
+        </div>
+    </div>
+
+    <div class="flex-row bloqueHabitacion" id="bloqueHabitacion">
+        <div class="d-flex flex-column bloqueHabitacionInterna">
+            <button type="button" class="close align-self-end m-2" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            
+            <div class="m-2 text-center">
+                <span class="texto"></span>
+            </div>
+            
+            <div class="m-2 d-flex flex-row">
+                <label for="staticEmail" class="col-form-label">Adultos</label>
+                <div class="ml-auto">
+                    <select class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="m-2 d-flex flex-row">
+                <label for="staticEmail" class="col-form-label">Niños</label>
+                <div class="ml-auto">
+                    <select class="form-control listaChilds">
+                        <option 1value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="edad m-2 d-flex flex-row justify-content-between flex-wrap">
+            </div>
+        </div>
+        <hr>
+    </div>
+    
+
+
+    <!-- Script bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
