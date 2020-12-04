@@ -1,0 +1,22 @@
+{
+  "name": "ut5_p01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saulbkn/saulbkn.github.io.git"
+  },
+  "author": "Saul Morales Felipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saulbkn/saulbkn.github.io/issues"
+  },
+  "homepage": "https://github.com/saulbkn/saulbkn.github.io#readme",
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  }
+}

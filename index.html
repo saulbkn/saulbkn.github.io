@@ -9,21 +9,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
-<body>
-    <main class="mx-auto mt-5">
+<body class="d-flex flex-column">
+    <header class="text-white py-5 text-center mb-3">
+        <h2>RESERVA HOTELERA</h2>
+    </header>
+
+    <main class="d-flex flex-row justify-content-center ">
         <nav>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link active bg-warning" id="hoteles-tab" data-toggle="tab" href="#hoteles" role="tab" aria-controls="hoteles" aria-selected="true">Hoteles</a>
+                  <a class="nav-link active hoteles" id="hoteles-tab" data-toggle="tab" href="#hoteles" role="tab" aria-controls="hoteles" aria-selected="true">Hoteles</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="vuelos-tab" data-toggle="tab" href="#vuelos" role="tab" aria-controls="vuelos" aria-selected="false">Vuelos y Hoteles</a>
+                  <a class="nav-link vuelos" id="vuelos-tab" data-toggle="tab" href="#vuelos" role="tab" aria-controls="vuelos" aria-selected="false">Vuelos</a>
                 </li>
               </ul>
 
-              <div class="tab-content bg-warning" id="contenidoBuscador">
-                <div class="tab-pane fade show active" id="hoteles" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="d-flex" id="grupoFormulario">
+              <div class="tab-content" id="contenidoBuscador">
+                <div class="tab-pane fade show active hoteles" id="hoteles" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="d-flex justify-content-baseline" id="grupoFormulario">
                         <div class="form-group pt-2 bg-white d-flex flex-column justify-content-end">
                             <h6 class="pl-2" for="destino">Destino</h6>
                             <input type="text" class="form-control" id="textoDestino" placeholder="Destino o hotel?">
@@ -43,75 +47,121 @@
                         
                         <div class="form-group bloqueNoches bg-white d-flex flex-column justify-content-end">
                             <h6 class="pl-2" for="numeroNoches">Habitaciones</h6>
-                            <button type="button" class="btn bg-white" data-toggle="popover">
-                                Resumen
+                            <button type="button" class="btn bg-white botonHabit" data-toggle="popover">
                             </button>
                         </div>
 
-                        <div class="form-group bg-white">
-                            <input type="button" value="Buscar">
+                        <div class="p-3 my-auto bg-white form-group" id="Buscar">
+                            Buscar
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="vuelos" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane fade vuelos text-center pt-3 pb-2" id="vuelos" role="tabpanel" aria-labelledby="profile-tab">
                     <p>En proceso</p>
                 </div>
               </div>
         </nav>
     </main>
 
-    <div class="bloqueDatos d-flex flex-row" id="bloqueDatos">
-        <div class="d-flex flex-column">
-            <div class="m-2 bloqueAgregar d-flex flex-column">
-                <div class="botonAgregar mx-auto mt-3">+</div>
-                <p class="text-center">Agregar habitación</p>
+    <template id="tempBloqueDatos">
+        <div class="bloqueDatos d-flex flex-row" id="bloqueDatos">
+            <div class="flex-row d-flex bloqueHabitacion" id="bloqueHabitacion">
+                <div class="d-flex flex-column bloqueHabitacionInterna">
+                    <button type="button" class="close align-self-end m-2" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    
+                    <div class="m-2 text-center">
+                        <span class="textoNumero">1</span>
+                        <span class="textoHabitacion">Habitacion</span>
+                    </div>
+                    
+                    <div class="m-2 d-flex flex-row">
+                        <label for="staticEmail" class="col-form-label">Adultos</label>
+                        <div class="ml-auto">
+                            <select class="form-control lista">
+                                <option value="0">0</option>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="m-2 d-flex flex-row">
+                        <label for="staticEmail" class="col-form-label">Niños</label>
+                        <div class="ml-auto">
+                            <select class="form-control lista listaChilds">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="edad m-2 d-flex flex-row justify-content-between flex-wrap">
+                    </div>
+                </div>
+                <hr>
             </div>
-            <div class="text-center mr-2 align-middle">HECHO</div>
+            <div class="d-flex flex-column">
+                <div class="m-2 bloqueAgregar d-flex flex-column">
+                    <div class="botonAgregar mx-auto mt-3">+</div>
+                    <p class="text-center">Agregar habitación</p>
+                </div>
+                <div class="mx-auto" id="botonTerminar">
+                    HECHO
+                </div>
+            </div>
         </div>
-    </div>
+    </template>
 
-    <div class="flex-row bloqueHabitacion" id="bloqueHabitacion">
-        <div class="d-flex flex-column bloqueHabitacionInterna">
-            <button type="button" class="close align-self-end m-2" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            
-            <div class="m-2 text-center">
-                <span class="texto"></span>
-            </div>
-            
-            <div class="m-2 d-flex flex-row">
-                <label for="staticEmail" class="col-form-label">Adultos</label>
-                <div class="ml-auto">
-                    <select class="form-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
+    <template id="tempBloqueHabitacion">
+        <div class="flex-row d-flex bloqueHabitacion" id="bloqueHabitacion">
+            <div class="d-flex flex-column bloqueHabitacionInterna">
+                <button type="button" class="close align-self-end m-2" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+                <div class="m-2 text-center">
+                    <span class="textoNumero"></span>
+                    <span class="textoHabitacion"> Habitacion</span>
+                </div>
+                
+                <div class="m-2 d-flex flex-row">
+                    <label for="staticEmail" class="col-form-label">Adultos</label>
+                    <div class="ml-auto">
+                        <select class="form-control lista">
+                            <option value="0">0</option>
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="m-2 d-flex flex-row">
+                    <label for="staticEmail" class="col-form-label">Niños</label>
+                    <div class="ml-auto">
+                        <select class="form-control lista listaChilds">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="edad m-2 d-flex flex-row justify-content-between flex-wrap">
                 </div>
             </div>
-            
-            <div class="m-2 d-flex flex-row">
-                <label for="staticEmail" class="col-form-label">Niños</label>
-                <div class="ml-auto">
-                    <select class="form-control listaChilds">
-                        <option 1value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
-            </div>
-            <div class="edad m-2 d-flex flex-row justify-content-between flex-wrap">
-            </div>
+            <hr>
         </div>
-        <hr>
-    </div>
+    </template>
     
-
-
     <!-- Script bootstrap -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

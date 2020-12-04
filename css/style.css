@@ -1,6 +1,33 @@
-main{
-    border: 2px solid blue;
-    width: fit-content;
+html, body{
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    background-image: url("/img/body.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a{
+    color: white;
+}
+
+.form-group{
+    border-radius: 5px;
+}
+
+.hoteles{
+    background-color: orange;
+}
+
+.vuelos{
+    background-color: skyblue;
+}
+
+.vuelos p{
+    font-size: 20px;
 }
 
 #grupoFormulario > div{
@@ -16,13 +43,17 @@ main{
     flex-basis: 25%;
 }
 
-.bloqueDatos{
-    border: 2px solid red;
-    width: fit-content;
-}
-
 .bloqueHabitacionInterna{
     width:150px;
+}
+
+.edad select{
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.edad select option:disabled{
+    color: white;
 }
 
 .bloqueAgregar{
@@ -43,6 +74,15 @@ main{
     cursor: pointer;
 }
 
+.textoNumero, .textoHabitacion{
+    font-weight: bold;
+    color: rgb(66, 172, 66);
+}
+
+.textoNumero{
+    font-size: 20px;
+}
+
 hr{ 
     border:         none;
     border-left:    2px solid hsla(200, 10%, 50%, 100);
@@ -50,10 +90,16 @@ hr{
     width:          5px;       
 }
 
-#bloqueHabitacion{
-    display: none;
-}
-
 .close{
     visibility: hidden;
+}
+
+#botonTerminar:hover{
+    color:rgb(92, 92, 180);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popover{
+    max-width: fit-content;
 }
